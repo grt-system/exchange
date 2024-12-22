@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  grt-sys-exchange-1:
+    image: exchange
+    ports:
+      - "8080:8080"  # Primeira instância na porta 8080
+    volumes:
+      - ./src/main/resources/application.properties:/app/application.properties  # Monta o arquivo de configuração
+  grt-sys-exchange-2:
+    image: exchange
+    ports:
+      - "8081:8080"  # Segunda instância na porta 8081
+    volumes:
+      - ./src/main/resources/application.properties:/app/application.properties  # Monta o arquivo de configuração
